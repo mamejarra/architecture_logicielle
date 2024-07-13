@@ -1,4 +1,7 @@
 <?php
+
+//configuration de la base de données.
+
 $dsn = 'mysql:host=localhost;dbname=mglsi_news;charset=utf8';
 $username = 'root'; 
 $password = ''; 
