@@ -4,38 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualite</title>
-    <link rel="stylesheet" href="../public/css/style.css" /> <!-- Inclusion de la feuille de style CSS -->
+    <link rel="stylesheet" href="../public/css/style.css" /> 
 </head>
 <body>
     <header class="header">
-        <h1>ACTUALITES POLYTECHNICIENNES</h1> <!-- Titre principal de l'en-tête -->
+        <h1>ACTUALITES POLYTECHNICIENNES</h1> 
     </header>
 
     <nav class="navbar">
         <ul>
-            <li><a href="index.php">Accueil</a></li> <!-- Lien vers la page d'accueil -->
-            <?php foreach ($categories as $cat) : ?> <!-- Boucle pour chaque catégorie -->
-                <li><a href="index.php?category=<?= $cat['id'] ?>"><?= htmlspecialchars($cat['libelle']) ?></a></li> <!-- Lien dynamique pour chaque catégorie -->
+            <li><a href="index.php">Accueil</a></li> 
+            <?php foreach ($categories as $cat) : ?> 
+                <li><a href="index.php?category=<?= $cat['id'] ?>"><?= htmlspecialchars($cat['libelle']) ?></a></li> 
             <?php endforeach; ?>
         </ul>
     </nav>
 
     <main class="main-content">
         <div>
-            <h1>Les dernières actualités</h1> <!-- Titre de la section principale -->
+            <h1>Les dernières actualités</h1> 
         </div>
         
-        <!-- Section pour afficher la liste des articles -->
-
-        <?php if ($articles) : ?> <!-- Vérifie s'il y a des articles à afficher -->
-            <?php foreach ($articles as $article) : ?> <!-- Boucle pour chaque article -->
+        <?php if ($articles) : ?> 
+            <?php foreach ($articles as $article) : ?>
                 <div class="box">
-                    <h2><?= htmlspecialchars($article['titre']) ?></h2> <!-- Affichage du titre de l'article -->
-                    <p><?= htmlspecialchars($article['contenu']) ?></p> <!-- Affichage du contenu de l'article -->
+                    <h2><?= htmlspecialchars($article['titre']) ?></h2> 
+                    <p><?= htmlspecialchars($article['contenu']) ?></p> 
                 </div>
             <?php endforeach; ?>
         <?php else : ?>
-            <p>Aucun article trouvé pour cette catégorie.</p> <!-- Message si aucun article trouvé -->
+            <p>Aucun article trouvé pour cette catégorie.</p> 
         <?php endif; ?>
     </main>
 </body>

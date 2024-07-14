@@ -9,16 +9,13 @@ require_once '../controllers/ArticleController.php';
 require_once '../models/ArticleModel.php';
 require_once '../models/CategoryModel.php';
 
-// Récupère l'URL et la traite
 $url = $_GET['url'] ?? 'article/index';
 $url = explode('/', $url);
 
-// Détermine le nom du contrôleur et l'action à exécuter
 $controllerName = ucfirst($url[0]) . 'Controller';
 $action = $url[1] ?? 'index';
 $param = $url[2] ?? null;
 
-// Instancie le contrôleur et appelle l'action appropriée
 $controller = new $controllerName();
 if ($param) {
     $controller->$action($param);
